@@ -9,3 +9,17 @@
 
 Мой pythonanywhere: sereginape21.pythonanywhere.com
 Сам бот: https://t.me/hp_hogwarts_exams_bot
+
+Requirements:
+Вам понадобятся следующие библиотеки:
+import telebot
+from telebot import types
+import sqlite3
+from pymorphy2 import MorphAnalyzer
+import re
+import numpy as np
+import matplotlib.pyplot as plt
+from io import BytesIO
+import nltk
+from nltk.corpus import stopwords
+from spellchecker import SpellChecker
