@@ -289,6 +289,11 @@ def callback_worker(call):
                 def preprocess_text(text):
                     tokens = text.lower().split()
                     tokens = [token.strip('.,?!«»"\'') for token in tokens if token not in stop_words]
+                    morph = MorphAnalyzer()
+                    for i in range(len(tokens)):
+                        ana = morph.parse(tokens[i])
+                        first = ana[0]
+                        tokens[i] = first.normal_form
                     return tokens
 
                 # считаем косинусное расстояние (извините, pycharm не дал мне загрузить НИ ОДНУ семантическую модель,
@@ -498,6 +503,11 @@ def callback_worker(call):
                 def preprocess_text(text):
                     tokens = text.lower().split()
                     tokens = [token.strip('.,?!«»"\'') for token in tokens if token not in stop_words]
+                    morph = MorphAnalyzer()
+                    for i in range(len(tokens)):
+                        ana = morph.parse(tokens[i])
+                        first = ana[0]
+                        tokens[i] = first.normal_form
                     return tokens
 
                 def cosine_similarity(vector1, vector2):
