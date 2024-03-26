@@ -12,7 +12,7 @@
 
 Requirements:
 
-Вам понадобятся следующие библиотеки:
+Вам понадобятся следующие библиотеки и модули:
 - import telebot
 - from telebot import types
 - import sqlite3
