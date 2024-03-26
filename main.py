@@ -10,7 +10,14 @@ import nltk
 from nltk.corpus import stopwords
 from spellchecker import SpellChecker
 
-bot = telebot.TeleBot('7056992273:AAHiATYByA-ItpAbwTMQo1kZk3tqJCb71Kc')
+
+def read_file(file_name):
+    with open(file_name, 'r') as file:
+        return file.read()
+
+
+# bot = telebot.TeleBot('7056992273:AAHiATYByA-ItpAbwTMQo1kZk3tqJCb71Kc')
+bot = telebot.TeleBot(read_file('token.ini'))
 conn = sqlite3.connect('questions.db')
 cur = conn.cursor()
 nltk.download('stopwords')
