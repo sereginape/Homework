@@ -16,7 +16,6 @@ def read_file(file_name):
         return file.read()
 
 
-# bot = telebot.TeleBot('7056992273:AAHiATYByA-ItpAbwTMQo1kZk3tqJCb71Kc')
 bot = telebot.TeleBot(read_file('token.ini'))
 conn = sqlite3.connect('questions.db')
 cur = conn.cursor()
